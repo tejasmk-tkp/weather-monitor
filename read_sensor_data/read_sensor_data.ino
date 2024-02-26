@@ -31,16 +31,16 @@ void loop() {
     // Check the results of the readings.
     // If the reading is successful, print the temperature and humidity values.
     // If there are errors, print the appropriate error messages.
-  //   if (result == 0) {
-  //       Serial.print("Temperature: ");
-  //       Serial.print(temperature);
-  //       Serial.print(" °C\tHumidity: ");
-  //       Serial.print(humidity);
-  //       Serial.println(" %");
-  //   } else {
-  //       // Print error message based on the error code.
-  //       Serial.println(DHT11::getErrorString(result));
-  //   }
+  // if (result == 0) {
+  //        Serial.print("Temperature: ");
+  //        Serial.print(temperature);
+  //        Serial.print(" °C\tHumidity: ");
+  //        Serial.print(humidity);
+  //        Serial.println(" %");
+  //    } else {
+  //        // Print error message based on the error code.
+  //        Serial.println(DHT11::getErrorString(result));
+  //    }
 
   //     Serial.print("Temperature = ");
   // Serial.print(bmp.readTemperature());
@@ -67,14 +67,16 @@ void loop() {
   int rain_value = digitalRead(rain_sensor);//read value
   // Serial.print("Value : ");
   // Serial.println(rain_value);
-  
+  float pressure = bmp.readPressure();
+  float altitude = bmp.readAltitude();
+
   Serial.print(temperature);
   Serial.print(" ");
   Serial.print(humidity);
   Serial.print(" ");
-  Serial.print(bmp.readPressure());
+  Serial.print(pressure);
   Serial.print(" ");
-  Serial.print(bmp.readAltitude());
+  Serial.print(altitude);
   Serial.print(" ");
   Serial.println(rain_value);
 }

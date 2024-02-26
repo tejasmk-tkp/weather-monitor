@@ -11,7 +11,7 @@ import time as tim
 a = lambda x, y: x * 60 + y
 
 app = FastAPI()
-ser = sl.Serial('/dev/ttyUSB1', 9600)
+ser = sl.Serial('/dev/ttyUSB0', 9600)
 
 app.add_middleware(
 CORSMiddleware,
