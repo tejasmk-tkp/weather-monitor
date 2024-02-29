@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/tejasmk-tkp/Documents/Weather Monitor/venv"
+VIRTUAL_ENV="/home/tejasmk-tkp/Documents/Weather_Monitor/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
