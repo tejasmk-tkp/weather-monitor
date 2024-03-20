@@ -65,7 +65,7 @@ def get_weather(temperature, humidity, pressure):
 def update_data():
     while True:
         try:
-            ser = sl.Serial('/dev/ttyUSB1', 9600)
+            ser = sl.Serial('/dev/ttyUSB0', 9600)
             d = list(map(float, ser.readline().decode('utf-8').split()))
             data.append({
                 "temperature": d[0],
