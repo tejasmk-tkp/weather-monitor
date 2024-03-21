@@ -32,16 +32,16 @@ data = [
 
 features = pd.read_csv('chennai 2023-01-01 to 2024-02-27.csv')
 labels = np.array(features['cloudcover'])
-features= features.drop(['name', 'datetime', 'preciptype', 'snow', 'snowdepth', 'sunrise', 'sunset', 'conditions', 'description', 'icon', 'stations', 'cloudcover', 'solarenergy', 'tempmax', 'tempmin', 'feelslikemax', 'feelslikemin', 'feelslike', 'dew', 'precip', 'precipprob', 'precipcover', 'windgust', 'windspeed', 'winddir', 'visibility', 'solarradiation', 'uvindex', 'severerisk', 'moonphase'], axis = 1)
+features= features.drop(['name', 'datetime', 'snow', 'snowdepth', 'sunrise', 'sunset', 'conditions', 'description', 'icon', 'stations', 'cloudcover', 'solarenergy', 'tempmax', 'tempmin', 'feelslikemax', 'feelslikemin', 'feelslike', 'dew', 'precip', 'precipprob', 'precipcover', 'windgust', 'windspeed', 'winddir', 'visibility', 'solarradiation', 'uvindex', 'severerisk', 'moonphase'], axis = 1)
 feature_list = list(features.columns)
 features = np.array(features)
 train_features, test_features, train_labels, test_labels = train_test_split(features, labels, test_size = 0.1, random_state = 80)
 rf = DecisionTreeRegressor(random_state = 80)
 rf.fit(train_features, train_labels)
 
-features_2 = pd.read_csv('icon.csv')
+features_2 = pd.read_csv('chennai 2023-01-01 to 2024-02-27.csv')
 labels_2 = np.array(features_2['icon'])
-features_2 = features_2.drop(['name', 'datetime', 'preciptype', 'snow', 'snowdepth', 'sunrise', 'sunset', 'conditions', 'description', 'icon', 'stations', 'cloudcover', 'solarenergy', 'tempmax', 'tempmin', 'feelslikemax', 'feelslikemin', 'feelslike', 'dew', 'precip', 'precipprob', 'precipcover', 'preciptype', 'windgust', 'windspeed', 'winddir', 'visibility', 'solarradiation', 'uvindex', 'severerisk', 'moonphase'], axis = 1)
+features_2 = features_2.drop(['name', 'datetime', 'snow', 'snowdepth', 'sunrise', 'sunset', 'conditions', 'description', 'icon', 'stations', 'cloudcover', 'solarenergy', 'tempmax', 'tempmin', 'feelslikemax', 'feelslikemin', 'feelslike', 'dew', 'precip', 'precipprob', 'precipcover', 'windgust', 'windspeed', 'winddir', 'visibility', 'solarradiation', 'uvindex', 'severerisk', 'moonphase'], axis = 1)
 feature_list_2 = list(features_2.columns)
 features_2 = np.array(features_2)
 train_features_2, test_features_2, train_labels_2, test_labels_2 = train_test_split(features_2, labels_2, test_size = 0.1, random_state = 80)
@@ -72,7 +72,7 @@ def update_data():
                 "humidity": d[1],
                 "pressure": d[2],
                 "altitude": d[3],
-                "rain_value": d[4],
+                "rain_val": d[4],
                 "name": datetime.now().strftime("%H:%M:%S"),
                 "mytime": get_time(),
                 "cloud_cover": get_cloud_cover(d[0], d[1], d[2]),
